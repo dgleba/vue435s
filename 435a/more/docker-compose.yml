@@ -1,0 +1,12 @@
+version: '3.6'
+services:
+
+  vue435a:
+    image:  nginx:1.14 
+    # build:
+      # context: ./nginx
+      # dockerfile: Dockerfile
+    volumes:
+        - .:/usr/share/nginx/html
+    ports:
+        -   "3001:80"
