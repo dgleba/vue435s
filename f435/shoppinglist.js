@@ -2,7 +2,6 @@
 // Vue.use(VueMaterial);
 Vue.use(VueMaterial.default)
 
-
 // Vue Material theme
 // Vue.material.registerTheme('default', {
 //   primary: 'blue',
@@ -78,9 +77,5 @@ var app = new Vue({
     this.searched = this.users;
   }
 
-
-
 });
-
-
 
