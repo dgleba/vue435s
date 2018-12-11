@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- http://192.168.88.42:3001/c435/ -->
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+  <title>Menu-435c</title>
+  <!-- Material Design icons and fonts  -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Material Design styles for Vue.js  -->
+  <link rel="stylesheet" href="https://unpkg.com/vue-material@0.7.4/dist/vue-material.css">
+  <!-- our styles -->
+  <link href="shoppinglist.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+
+  <!-- vue.js app -->
+  <div id="app" class="app-viewport">
+    <!-- top bar -->
+    <md-whiteframe md-elevation="3" class="main-toolbar">
+      <md-toolbar>
+
+        <!-- page title -->
+        <h2 class="md-title" style="flex: 1">{{ pagetitle }}</h2>
+
+      </md-toolbar>
+    </md-whiteframe> <!-- top bar -->
+
+    
+   <div>    
+      <md-list>
+        <md-list-item>Plain Text</md-list-item>
+        <md-list-item href="https://google.com" target="_blank">Link</md-list-item>
+        <md-list-item to="/components/list/router">Link Router</md-list-item>
+        <md-list-item to="/components/list">Link Router Active Color</md-list-item>
+      </md-list>
+    </div>
+  
+  </div>
+
+
+  <!-- Vue.js - framework that handles DOM/Model interaction -->
+  <script src="https://unpkg.com/vue@2.4.2/dist/vue.js"></script>
+  <!-- vue-material - Material Design for Vue.js -->
+  <script src="https://unpkg.com/vue-material@0.7.4/dist/vue-material.js"></script>
+  <!-- our code -->
+  <script src="shoppinglist.js"></script>
+
+</body>
+
+</html>

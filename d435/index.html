@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <!-- https://bootstrap-vue.js.org/docs/reference/starter-templates/ -->
-
+<!-- try table with search...  https://vuematerial.io/components/table/ -->
 
 <html lang="en">
 
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-    <title>My first Bootstrap-Vue app</title>
+  <title>My first Bootstrap-Vue app</title>
 
-    <!-- Required Stylesheets -->
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+  <!-- Required Stylesheets -->
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
 
-    <!-- Required scripts -->
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-  </head>
+  <!-- Required scripts -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+</head>
 
-  <body>
-    <!-- Our application root element -->
-    <div id="app">
-      <b-container>
+<body>
+  <!-- Our application root element -->
+  <div id="app">
+    <b-container>
 
-        <b-list-group>
-          <b-list-group-item href="https://google.com" target="_blank">   ggl  </b-list-group-item>
-          <b-list-group-item> mt   </b-list-group-item>
-        </b-list-group>
+      <b-list-group>
+        <b-list-group-item href="https://google.com" target="_blank"> ggl </b-list-group-item>
+        <b-list-group-item> mt </b-list-group-item>
+      </b-list-group>
 
-      </b-container>
-    </div>
+    </b-container>
+  </div>
 
-    <!-- Start running your app -->
-    <script>
-      window.app = new Vue({
-        el: "#app",
-        data: {
-          name: ''
-        },
-        computed: {
-          showAlert() {
-            return this.name.length > 4 ? true : false;
-          }
+  <!-- Start running your app -->
+  <script>
+    window.app = new Vue({
+      el: "#app",
+      data: {
+        name: ''
+      },
+      computed: {
+        showAlert() {
+          return this.name.length > 4 ? true : false;
         }
-      })
-    </script>
+      }
+    })
+  </script>
 
-  </body>
+</body>
+
 </html>

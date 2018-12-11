@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<!-- http://192.168.88.42:3001/c435/ -->
+
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" /> -->
+  <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+  <title>Menu-435c</title>
+  <!-- Material Design icons and fonts  -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+
+  <link href="shoppinglist.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+
+</head>
+
+<body>
+
+  <!-- vue.js app -->
+  <div id="app" class="app-viewport">
+    <!-- top bar -->
+    <md-whiteframe md-elevation="3" class="main-toolbar">
+      <md-toolbar>
+
+        <!-- page title -->
+        <h2 class="md-title" style="flex: 1">{{ pagetitle }}</h2>
+
+      </md-toolbar>
+    </md-whiteframe> <!-- top bar -->
+
+    <div>
+      <md-table v-model="searched" md-sort="name" md-sort-order="asc" md-card md-fixed-header>
+        <md-table-toolbar>
+          <div class="md-toolbar-section-start">
+            <h1 class="md-title">Users</h1>
+          </div>
+  
+        <md-input-container>
+        <md-field  md-clearable class="md-toolbar-section-end" >
+            <md-input placeholder="Search by name..." v-model="search" @input="searchOnTable" />
+          </md-field>
+        </md-input-container>
+        </md-table-toolbar>
+  
+        <md-table-empty-state
+          md-label="No users found"
+          :md-description="`No user found for this '${search}' query. Try a different search term or create a new user.`">
+          <md-button class="md-primary md-raised" @click="newUser">Create New User</md-button>
+        </md-table-empty-state>
+  
+        <md-table-row slot="md-table-row" slot-scope="{ item }">
+          <md-table-cell md-label="ID" md-sort-by="id" md-numeric>{{ item.id }}</md-table-cell>
+          <md-table-cell md-label="Name" md-sort-by="name">{{ item.name }}</md-table-cell>
+          <md-table-cell md-label="Email" md-sort-by="email">{{ item.email }}</md-table-cell>
+          <md-table-cell md-label="Gender" md-sort-by="gender">{{ item.gender }}</md-table-cell>
+          <md-table-cell md-label="Job Title" md-sort-by="title">{{ item.title }}</md-table-cell>
+        </md-table-row>
+      </md-table>
+    </div>
+  
+
+
+
+  </div>
+
+
+ 
+  <!-- Vue.js - framework that handles DOM/Model interaction -->
+  <!-- <script src="https://unpkg.com/vue@2.4.2/dist/vue.js"></script> -->
+  <script src="https://unpkg.com/vue"></script>
+  <!-- vue-material - Material Design for Vue.js -->
+  <script src="https://unpkg.com/vue-material@beta"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue-material@1.0.0-beta-10.2/dist/vue-material.js"></script> -->
+  <!-- our code -->
+   <script src="shoppinglist.js"></script>
+
+</body>
+
+</html>
