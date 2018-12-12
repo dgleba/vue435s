@@ -11,16 +11,16 @@ Vue.use(VueMaterial.default)
 // });
 
 const toLower = text => {
-  return text.toString().toLowerCase();
+  return text.toString().toLowerCase()
 };
 
 const searchByName = (items, term) => {
   if (term) {
-    return items.filter(item => toLower(item.name).includes(toLower(term)));
+    return items.filter(item => toLower(item.name).includes(toLower(term)))
   };
 
-  return items; 
-};
+  return items
+}
 
 
 
@@ -30,7 +30,7 @@ var app = new Vue({
   el: '#app',
   data: {
     pagetitle: 'Menu435c',
-    item: [],
+
     search: null,
     searched: [],
     users: [
@@ -67,14 +67,14 @@ var app = new Vue({
   },
   methods: {
     newUser () {
-      window.alert('Noop');
+      window.alert('Noop')
     },
     searchOnTable () {
-      this.searched = searchByName(this.users, this.search);
+      this.searched = searchByName(this.users, this.search)
     }
   },
   created () {
-    this.searched = this.users;
+    this.searched = this.users
   }
 
 });
