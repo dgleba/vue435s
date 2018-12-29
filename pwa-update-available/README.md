@@ -3,6 +3,9 @@
 
 I  ran this with mongoose locally because the browser would not use the service worker from non https with an ip address. It works from localhost:8080 fir example.
 
+# Notes
+
+See other .md files and docs here as well.
 
 
 ## This content originally from:
