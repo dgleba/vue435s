@@ -13,8 +13,6 @@ function color22() {
 }
 
 function ver23() {
-
-var ver1 = "mainscript.js ver:  3";
-
-document.getElementById("ver23a").innerHTML =  ver1 + "<br>" ; 
+  var ver1 = "mainscript.js ver:  5";
+  document.getElementById("ver23a").innerHTML =  ver1 + "<br>" ; 
 }

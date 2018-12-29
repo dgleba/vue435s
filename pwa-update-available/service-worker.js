@@ -1,4 +1,4 @@
-var cacheName = 'dog-v11';
+var cacheName = 'dog-v14';
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -31,3 +31,20 @@ self.addEventListener('fetch', function (event) {
 });
 
 
+// https://stackoverflow.com/questions/45467842/how-to-clear-cache-of-service-worker
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          // Return true if you want to remove this cache,
+          // but remember that caches are shared across
+          // the whole origin
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
