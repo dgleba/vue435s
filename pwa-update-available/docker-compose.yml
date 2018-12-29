@@ -1,7 +1,7 @@
 version: '3.6'
 services:
 
-  vue435a:
+  nginx:
     image:  nginx:1.14 
     # build:
       # context: ./nginx
