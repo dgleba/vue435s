@@ -1,4 +1,4 @@
-var cacheName = 'dog-v14';
+var cacheName = 'dog-v15';
 
 self.addEventListener('install', event => {
   event.waitUntil(
