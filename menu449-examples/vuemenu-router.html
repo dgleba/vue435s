@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>vue-2router vuetify static menu</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" src="/js/babel/babel.js"></script>
+
+  <script
+    type="text/javascript"
+    src="/js/lib/dummy.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/jsx"
+    data-presets="es2017,react,stage-0"
+    data-plugins="transform-decorators-legacy">
+
+
+  
+const Home = { template: '<div>Home</div>' }
+const pg2 = { template: '<div>Page2</div>' }
+
+const router = new VueRouter({
+  mode: 'history',
+  base: "/",
+  routes: [
+    { path: '/', component: Home },
+    { path: '/pg2', component: pg2 }
+  ]
+})
+
+/*  currentUrl = this.$route.query.page;
+      console.log('b=',currentUrl);
+       */
+       
+new Vue({
+	router,
+  el: '#app',
+ 
+  data () {
+    return {
+      msg: '--test--',
+      currentUrl: 'a',
+      menu: [
+        { icon: 'home', title: 'home', link: "/" },
+        { icon: 'info', title: 'Pg2', link: "/pg2" }
+      
+      ],
+      items: [
+        { title: 'item 1', link: "/pg2" },
+        { title: 'app 2',  },
+        { title: 'app 3 link',  }
+      ]
+    }
+  },
+  
+  methods: {
+    menuItems () {
+      /* currentUrl = this.$route.query.page */;
+      currentUrl = location.protocol + '//' + location.host;
+      console.log('a=',currentUrl);
+
+      return this.menu
+    }
+  },
+  
+  created: function(){
+    currentUrl = window.location.pathname; 
+    currentUrl = document.URL;
+    currentUrl = location.protocol + '//' + location.host;
+    console.log('a=',currentUrl);
+
+  }
+      
+})
+
+
+/* 
+
+https://stackoverflow.com/questions/40899532/how-to-pass-a-value-from-vue-data-to-href
+
+
+        <router-link to="/"> [ Home ] </router-link>
+        &nbsp; &nbsp;
+        <router-link to="/pg2">  [ Pg2 ] </router-link>
+        
+*/
+
+
+</script>
+
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Vuetify Template</title>
+ 
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'>
+<link rel='stylesheet' href='https://unpkg.com/vuetify/dist/vuetify.min.css'>
+  
+ <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+<script src="https://npmcdn.com/vue-router/dist/vue-router.js"></script>
+<script src='https://unpkg.com/vuetify/dist/vuetify.min.js'></script>
+</head>
+
+<body>
+
+<div id="app">
+  <v-app>
+  
+      <v-toolbar>
+        <v-toolbar-title>.&nbsp </v-toolbar-title>
+        <v-menu class="hidden-md-and-up">
+          <v-toolbar-side-icon slot="activator"></v-toolbar-side-icon>
+          <v-list>
+            <v-list-tile  v-for="item in menu"  :key="item.icon"  :to="item.link"
+              flat >
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+
+        <v-toolbar-items class="hidden-xs-and-down">
+          <v-btn v-for="item in menu" :key="item.icon" :to="item.link" flat>{{
+            item.title
+          }}</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+    
+    <v-content>
+      <v-container grid-list-xl>
+        <!--  -->
+        <router-view></router-view>
+        
+          <v-list>
+            <v-list-tile
+              v-for="item in items"  :key="item.title"   :href="item.link" target="_blank"   >
+               <v-list-tile-content>
+                <v-list-tile-title v-text="item.title"></v-list-tile-title>
+              </v-list-tile-content>
+             </v-list-tile>
+          </v-list>
+          
+        {{msg}} {{currentUrl}}
+      </v-container>
+    </v-content>
+  </v-app>
+
+</div>
+
+</body>
+</html>

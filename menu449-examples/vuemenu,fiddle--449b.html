@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>menu in Vue.js</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <style id="compiled-css" type="text/css">
+        .header {
+            padding: 15px 15px 20px 15px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .header h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 40px;
+        }
+    </style>
+
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/vue/2.2.1/vue.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            const currentUrl = location.protocol + '//' + location.host;
+            console.log('a=', this.currentUrl);
+
+            Vue.component('homepage', {
+                template: '#homepage',
+                data: function () {
+                    return {
+                        items: [{
+                            title: 'menu437',
+                            link: (location.protocol + '//' + location.host + '/menu437')
+                        },
+                        {
+                            title: 'cilist',
+                            link: (currentUrl + '/cilist')
+                        },
+                        {
+                            title: 'test2',
+                            link: (location.protocol + '//' + location.host + '/test2')
+                        },
+                        {
+                            title: 'prodmgt morningmeeting',
+                            link: (location.protocol + '//' + location.host + ':1351')
+                        }
+                        ]
+                    }
+                }
+            })
+
+            Vue.component('page2', {
+                template: '#page2'
+            })
+
+            new Vue({
+                el: '#app',
+                data: {
+                    currentView: 'homepage'
+                }
+            })
+
+
+            /* 
+            notes.
+            
+            v-bind:href="items.link"
+            v-bind:href="'/job/'+ r.id" 
+            https://stackoverflow.com/questions/40899532/how-to-pass-a-value-from-vue-data-to-href
+            */
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills ">
+                    <li role="presentation">
+                        <a href="#" @click="currentView='homepage'">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" @click="currentView='page2'">Page2</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <component :is="currentView"></component>
+        </div>
+    </div>
+
+    <template id="homepage">
+        <div>
+            <h4>Menu</h4>
+            <div class="list-group">
+                <a v-for="itm in items" v-bind:href="itm.link" target='_blank' class="list-group-item clearfix">
+                    {{ itm.title }} </a>
+            </div>
+        </div>
+    </template>
+
+    <template id="page2">
+        <div>
+            <h3> Info</h3>
+            This page can have anything you wish on it.
+        </div>
+    </template>
+
+</body>
+
+</html>
